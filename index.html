@@ -1,13 +1,26 @@
  <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>Demo site - kincses</title>
+ <style>
+   h1 {
+     font-size: 500px;
+     color: white;
+   }
+</style>
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 </head>
 <body style="background-color:black;">
 
-<h1 id=demo style="color:white">0</h1>
+<h1 id=demo>0</h1>
 <script>
+ 
+
+// Set interval to check for updates
+const dailyUpdatesInterval = setInterval(checkUpdates, 1000*10);
+ 
+ function checkUpdates() {
+  // Code to fetch updates from the API and update the application
  const u_r_l = "aHR0cHM6Ly91OTdmZDQ2OTFtLmV4ZWN1dGUtYXBpLmV1LW5vcnRoLTEuYW1hem9uYXdzLmNvbS9pdGVtcy8xMDAw";
  
 const settings = {
@@ -23,6 +36,8 @@ $.ajax(settings).done(function (response) {
  document.getElementById("demo").innerHTML=response.data;
   console.log(response);
 });
+  
+}
 //document.getElementById("demo").innerHTML = 5 + 6;
 </script>
 </body>
