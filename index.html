@@ -20,6 +20,7 @@ const settings = {
 };
 
 $.ajax(settings).done(function (response) {
+ document.getElementById("demo").innerHTML=response.data;
   console.log(response);
 });
 //document.getElementById("demo").innerHTML = 5 + 6;
