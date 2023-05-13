@@ -8,7 +8,18 @@
 
 <h1 id=demo style="color:white">0</h1>
 <script>
-document.getElementById("demo").innerHTML = 5 + 6;
+ const u_r_l = "aHR0cHM6Ly91OTdmZDQ2OTFtLmV4ZWN1dGUtYXBpLmV1LW5vcnRoLTEuYW1hem9uYXdzLmNvbS9pdGVtcy8xMDAw";
+
+/*const options = {
+  headers: {
+    Authorization: "Bearer 6Q************"
+  }
+};*/
+
+fetch(atob(u_r_l), options)
+  .then( res => res.json() )
+  .then( data => document.getElementById("demo").innerHTML=(data) );
+//document.getElementById("demo").innerHTML = 5 + 6;
 </script>
 </body>
 </html> 
